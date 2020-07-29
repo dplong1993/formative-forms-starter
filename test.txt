@@ -1,0 +1,393 @@
+
+> skeleton@1.0.0 test /home/dplong/appacademy/w11/d3/formative-forms-starter
+> PORT=3001 mocha test --exit
+
+Example app listening on port 3001!
+
+
+  home
+    1) renders three navigation links
+    2) renders a navigation link to nagivate to '/'
+    3) renders a navigation link to nagivate to '/create'
+    4) renders a navigation link to nagivate to '/create-interesting'
+    ✓ renders an h2 header for the table
+    ✓ renders a table
+    ✓ renders seven th elements with the correct header text
+    ✓ renders seven td elements
+    ✓ renders the first user in the table
+
+  create-normal
+    5) "before all" hook for "renders three navigation links"
+
+  form-submit
+    when none of the fields are filled
+      6) "before all" hook for "render an unordered list of error messages "
+    when only the firstName field is filled
+      7) "before all" hook for "render li elements for each error message "
+    when only the lastName field is filled
+      8) "before all" hook for "render li elements for each error message "
+    when only the email field is filled
+      9) "before all" hook for "render li elements for each error message "
+    when password and confirmedPassword fields do not match
+      10) "before all" hook for "render li elements for each error message "
+    when all fields are filled correctly
+      11) redirects user back to home page to see newly created user
+
+  create-interesting
+    12) "before all" hook for "renders a form that posts to '/create-interesting'"
+
+  submit-interesting
+    when none of the fields are filled
+      13) "before all" hook for "render an unordered list of error messages "
+    when only the firstName field is filled
+      14) "before all" hook for "render li elements for each error message "
+    when only the lastName field is filled
+      15) "before all" hook for "render li elements for each error message "
+    when only the email field is filled
+      16) "before all" hook for "render li elements for each error message "
+    when password and confirmedPassword fields do not match
+      17) "before all" hook for "render li elements for each error message "
+    age field
+      18) renders an error message if age is not submitted
+      19) renders an error message if age is not a number
+      20) renders an error message if age is greater than 120
+      21) renders an error message if age is less than 0
+      22) prefills the age input value with the submitted age value
+    favoriteBeatle field
+      23) renders an error message if favoriteBeatle is not submitted
+      24) renders an error message if favoriteBeatle is not a valid member of the Beatles
+      25) marks the submitted favoriteBeatle value as 'selected'
+    when iceCream field is checked and there is an error with form
+      26) marks the iceCream field as checked
+    when all fields are filled correctly
+      27) redirects user back to home page to see newly created user
+
+
+  5 passing (248ms)
+  27 failing
+
+  1) home
+       renders three navigation links:
+
+      AssertionError: expected 0 to equal 3
+      + expected - actual
+
+      -0
+      +3
+      
+      at Context.<anonymous> (test/01_home.test.js:18:29)
+      at processImmediate (internal/timers.js:456:21)
+
+  2) home
+       renders a navigation link to nagivate to '/':
+     AssertionError: expected undefined to equal '/'
+      at Context.<anonymous> (test/01_home.test.js:23:41)
+      at processImmediate (internal/timers.js:456:21)
+
+  3) home
+       renders a navigation link to nagivate to '/create':
+     AssertionError: expected undefined to equal '/create'
+      at Context.<anonymous> (test/01_home.test.js:28:41)
+      at processImmediate (internal/timers.js:456:21)
+
+  4) home
+       renders a navigation link to nagivate to '/create-interesting':
+     AssertionError: expected undefined to equal '/create-interesting'
+      at Context.<anonymous> (test/01_home.test.js:33:42)
+      at processImmediate (internal/timers.js:456:21)
+
+  5) create-normal
+       "before all" hook for "renders three navigation links":
+     Error: expected 200 "OK", got 404 "Not Found"
+      at Test._assertStatus (node_modules/supertest/lib/test.js:268:12)
+      at Test._assertFunction (node_modules/supertest/lib/test.js:283:11)
+      at Test.assert (node_modules/supertest/lib/test.js:173:18)
+      at Server.localAssert (node_modules/supertest/lib/test.js:131:12)
+      at emitCloseNT (net.js:1657:8)
+      at processTicksAndRejections (internal/process/task_queues.js:83:21)
+
+  6) form-submit
+       when none of the fields are filled
+         "before all" hook for "render an unordered list of error messages ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  7) form-submit
+       when only the firstName field is filled
+         "before all" hook for "render li elements for each error message ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  8) form-submit
+       when only the lastName field is filled
+         "before all" hook for "render li elements for each error message ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  9) form-submit
+       when only the email field is filled
+         "before all" hook for "render li elements for each error message ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  10) form-submit
+       when password and confirmedPassword fields do not match
+         "before all" hook for "render li elements for each error message ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  11) form-submit
+       when all fields are filled correctly
+         redirects user back to home page to see newly created user:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  12) create-interesting
+       "before all" hook for "renders a form that posts to '/create-interesting'":
+     Error: expected 200 "OK", got 404 "Not Found"
+      at Test._assertStatus (node_modules/supertest/lib/test.js:268:12)
+      at Test._assertFunction (node_modules/supertest/lib/test.js:283:11)
+      at Test.assert (node_modules/supertest/lib/test.js:173:18)
+      at Server.localAssert (node_modules/supertest/lib/test.js:131:12)
+      at emitCloseNT (net.js:1657:8)
+      at processTicksAndRejections (internal/process/task_queues.js:83:21)
+
+  13) submit-interesting
+       when none of the fields are filled
+         "before all" hook for "render an unordered list of error messages ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  14) submit-interesting
+       when only the firstName field is filled
+         "before all" hook for "render li elements for each error message ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  15) submit-interesting
+       when only the lastName field is filled
+         "before all" hook for "render li elements for each error message ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  16) submit-interesting
+       when only the email field is filled
+         "before all" hook for "render li elements for each error message ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  17) submit-interesting
+       when password and confirmedPassword fields do not match
+         "before all" hook for "render li elements for each error message ":
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  18) submit-interesting
+       age field
+         renders an error message if age is not submitted:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  19) submit-interesting
+       age field
+         renders an error message if age is not a number:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  20) submit-interesting
+       age field
+         renders an error message if age is greater than 120:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  21) submit-interesting
+       age field
+         renders an error message if age is less than 0:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  22) submit-interesting
+       age field
+         prefills the age input value with the submitted age value:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  23) submit-interesting
+       favoriteBeatle field
+         renders an error message if favoriteBeatle is not submitted:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  24) submit-interesting
+       favoriteBeatle field
+         renders an error message if favoriteBeatle is not a valid member of the Beatles:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  25) submit-interesting
+       favoriteBeatle field
+         marks the submitted favoriteBeatle value as 'selected':
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  26) submit-interesting
+       when iceCream field is checked and there is an error with form
+         marks the iceCream field as checked:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+  27) submit-interesting
+       when all fields are filled correctly
+         redirects user back to home page to see newly created user:
+     TypeError [ERR_HTTP_INVALID_HEADER_VALUE]: Invalid value "undefined" for header "Cookie"
+      at ClientRequest.setHeader (_http_outgoing.js:529:3)
+      at Test.Request.request (node_modules/superagent/lib/node/index.js:660:11)
+      at Test.Request.end (node_modules/superagent/lib/node/index.js:764:8)
+      at Test.end (node_modules/supertest/lib/test.js:125:7)
+      at /home/dplong/appacademy/w11/d3/formative-forms-starter/node_modules/superagent/lib/request-base.js:238:12
+      at new Promise (<anonymous>)
+      at Test.then (node_modules/superagent/lib/request-base.js:237:31)
+      at processTicksAndRejections (internal/process/task_queues.js:97:5)
+
+
+
